@@ -3,7 +3,7 @@ using Crestron.SimplSharpPro;                       	// For Basic SIMPL#Pro clas
 using Crestron.SimplSharpPro.CrestronThread;        	// For Threading
 using System;
 
-namespace MILAV
+namespace MILAV.Crestron
 {
     public class ControlSystem : CrestronControlSystem
     {
