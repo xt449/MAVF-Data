@@ -38,9 +38,14 @@
     <Compile Include="API\Connection\TCPConnection.cs" />
     <Compile Include="API\Device\IChannelControl.cs" />
     <Compile Include="API\Device\IDevice.cs" />
-    <Compile Include="API\Device\IMultiViewer.cs" />
+    <Compile Include="API\Device\ILayoutControl.cs" />
     <Compile Include="API\Device\IPowerControl.cs" />
+    <Compile Include="API\Device\Layout\ILayout.cs" />
+    <Compile Include="API\Device\Layout\QuadLayout.cs" />
+    <Compile Include="API\Device\Layout\SingleLayout.cs" />
     <Compile Include="Crestron\ControlSystem.cs" />
+    <Compile Include="Data\Point2D.cs" />
+    <Compile Include="Data\Rectangle.cs" />
     <Compile Include="Data\SerialParity.cs" />
     <Compile Include="Device\AbstractDevice.cs" />
     <Compile Include="Device\DeviceRegistry.cs" />
