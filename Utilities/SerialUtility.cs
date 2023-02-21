@@ -7,7 +7,7 @@ namespace MILAV.Utilities
     {
         public static SerialParity FromString(string s)
         {
-            Enum.TryParse(s, true, out SerialParity parity);
+            Enum.TryParse(s.ToUpper(), false, out SerialParity parity);
             return parity;
         }
     }
