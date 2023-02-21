@@ -14,5 +14,9 @@
             this.width = width;
             this.height = height;
         }
+
+        public Point2D TopLeftCorner { get { return new Point2D(x, y); } }
+
+        public Point2D BottomRightCorner { get { return new Point2D(x + width, y + height); } }
     }
 }
