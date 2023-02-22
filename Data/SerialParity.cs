@@ -6,6 +6,6 @@
         ODD,
         EVEN,
         MARK,
-        SPACE
+        SPACE,
     }
 }
