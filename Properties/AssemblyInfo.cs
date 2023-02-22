@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -7,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("MILAV")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("The MIL Corporation")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("MILAV")]
-[assembly: AssemblyCopyright("Copyright © The MIL Corporation 2023")]
+[assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("687ee5ad-be34-4fb7-a047-f33e05289392")]
+[assembly: Guid("67ac5277-3d46-4b0c-af05-0d8c6a053482")]
 
 // Version information for an assembly consists of the following four values:
 //
