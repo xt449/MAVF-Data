@@ -1,4 +1,4 @@
-﻿using MILAV.Device.Newer;
+﻿using MILAV.API.Device;
 using System;
 using System.Diagnostics;
 using System.Linq;
