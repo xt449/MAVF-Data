@@ -1,4 +1,5 @@
-﻿using MILAV.API.Device;
+﻿using MILAV.API.Connection;
+using MILAV.API.Device;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,13 +9,18 @@ namespace MILAV.Device
 {
     public class DeviceRegistry
     {
-        private static Dictionary<(DeviceType, string), Type> deviceTypeAndIdToType;
+        private static readonly Dictionary<(DeviceType, string), Type> deviceTypeAndIdToType = new Dictionary<(DeviceType, string), Type>();
 
         /// <summary>
         /// Slow
         /// </summary>
         public static void Initialize()
         {
+            if(deviceTypeAndIdToType.Count > 0)
+            {
+                return;
+            }
+
             foreach (var type in AppDomain.CurrentDomain.GetAssemblies().SelectMany(assembly => assembly.GetTypes()).Where(type => typeof(IDevice).IsAssignableFrom(type) && !type.IsAbstract))
             {
                 var attribute = (DeviceAttribute) Attribute.GetCustomAttribute(type, typeof(DeviceAttribute));
@@ -28,6 +34,11 @@ namespace MILAV.Device
                     }
                 }
             }
+        }
+
+        public static bool TryGet(DeviceType type, string id, out Type o)
+        {
+            return deviceTypeAndIdToType.TryGetValue((type, id), out o);
         }
     }
 }
