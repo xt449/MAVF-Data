@@ -7,7 +7,7 @@
     <ProjectGuid>{B2459FE2-DBA4-48A5-B27E-D121DB1D3240}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MILAV_Data</RootNamespace>
+    <RootNamespace>MILAV.Data</RootNamespace>
     <AssemblyName>MILAV Data</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
