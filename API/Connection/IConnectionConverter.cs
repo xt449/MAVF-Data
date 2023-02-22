@@ -1,10 +1,9 @@
-﻿using MILAV.API.Connection;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 
-namespace MILAV.JSON
+namespace MILAV.API.Connection
 {
     internal class IConnectionConverter : JsonConverter
     {
@@ -28,8 +27,9 @@ namespace MILAV.JSON
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            JObject token = JObject.FromObject(value);
-            token["type"] = ((JsonObjectAttribute)Attribute.GetCustomAttribute(value.GetType(), typeof(JsonObjectAttribute))).Id;
+            var token = JObject.FromObject(value);
+            var attribute = (JsonObjectAttribute)Attribute.GetCustomAttribute(value.GetType(), typeof(JsonObjectAttribute));
+            token["type"] = attribute.Id;
             token.WriteTo(writer);
         }
     }

@@ -1,9 +1,9 @@
-﻿using MILAV.API.Device;
+﻿using MILAV.Device;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace MILAV.Device
+namespace MILAV.API.Device
 {
     public class IDeviceConverter : JsonConverter
     {

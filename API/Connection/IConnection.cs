@@ -1,5 +1,8 @@
-﻿namespace MILAV.API.Connection
+﻿using Newtonsoft.Json;
+
+namespace MILAV.API.Connection
 {
+    [JsonConverter(typeof(IConnectionConverter))]
     public interface IConnection
     {
         bool Connect();

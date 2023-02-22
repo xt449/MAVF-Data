@@ -1,5 +1,4 @@
-﻿using MILAV.API.Connection;
-using MILAV.API.Device;
+﻿using MILAV.API.Device;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,14 +15,14 @@ namespace MILAV.Device
         /// </summary>
         public static void Initialize()
         {
-            if(deviceTypeAndIdToType.Count > 0)
+            if (deviceTypeAndIdToType.Count > 0)
             {
                 return;
             }
 
             foreach (var type in AppDomain.CurrentDomain.GetAssemblies().SelectMany(assembly => assembly.GetTypes()).Where(type => typeof(IDevice).IsAssignableFrom(type) && !type.IsAbstract))
             {
-                var attribute = (DeviceAttribute) Attribute.GetCustomAttribute(type, typeof(DeviceAttribute));
+                var attribute = (DeviceAttribute)Attribute.GetCustomAttribute(type, typeof(DeviceAttribute));
                 if (attribute != null)
                 {
                     // This is probably not necessary
