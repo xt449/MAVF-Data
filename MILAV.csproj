@@ -36,6 +36,7 @@
     <Compile Include="API\Connection\IConnection.cs" />
     <Compile Include="API\Connection\IPConnection.cs" />
     <Compile Include="API\Connection\TCPConnection.cs" />
+    <Compile Include="API\Device\DeviceAttribute.cs" />
     <Compile Include="API\Device\DeviceType.cs" />
     <Compile Include="API\Device\IChannelControl.cs" />
     <Compile Include="API\Device\IDevice.cs" />
