@@ -1,8 +1,11 @@
-﻿using System.Linq;
+﻿using Newtonsoft.Json;
+using System;
+using System.Linq;
 using System.Net.Sockets;
 
 namespace MILAV.API.Connection
 {
+    [JsonObject("tcp")]
     public class TCPConnection : IPConnection
     {
         protected readonly TcpClient client;
@@ -21,6 +24,7 @@ namespace MILAV.API.Connection
         public override void Dispose()
         {
             client.Dispose();
+            GC.SuppressFinalize(this);
         }
 
         public override byte[] ReadBytes(int maxLength)
