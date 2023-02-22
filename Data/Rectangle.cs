@@ -7,7 +7,7 @@
         public readonly int width;
         public readonly int height;
 
-        public Rectangle(int x,int y, int width, int height)
+        public Rectangle(int x, int y, int width, int height)
         {
             this.x = x;
             this.y = y;

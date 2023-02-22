@@ -32,10 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Compile Include="API\Connection\IConnection.cs" />
     <Compile Include="API\Connection\IPConnection.cs" />
@@ -58,7 +54,6 @@
     <Compile Include="Utilities\Extensions.cs" />
     <Compile Include="Utilities\SerialUtility.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Reference Include="Crestron.SimplSharpPro.AudioDistribution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1099c178b3b54c3b, processorArchitecture=MSIL">
       <HintPath>packages\Crestron.SimplSharp.SDK.ProgramLibrary.2.19.39\lib\net47\Crestron.SimplSharpPro.AudioDistribution.dll</HintPath>
