@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MILAV")]
+[assembly: AssemblyTitle("MILAV Data")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MILAV")]
-[assembly: AssemblyCopyright("Copyright ©  2023")]
+[assembly: AssemblyCompany("The MIL Corporation")]
+[assembly: AssemblyProduct("MILAV Data")]
+[assembly: AssemblyCopyright("Copyright © The MIL Corporation 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("67ac5277-3d46-4b0c-af05-0d8c6a053482")]
+[assembly: Guid("b2459fe2-dba4-48a5-b27e-d121db1d3240")]
 
 // Version information for an assembly consists of the following four values:
 //
