@@ -1,34 +1,30 @@
 ﻿using MILAV.API.Device;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Reflection;
 
 namespace MILAV.Device
 {
     public class DeviceRegistry
     {
-        //public static Dictionary<string, Dictionary<string, CType>> manufacturerToModelToCType
+        private static Dictionary<(DeviceType, string), Type> deviceTypeAndIdToType;
 
         /// <summary>
         /// Slow
         /// </summary>
         public static void Initialize()
         {
-            foreach (var type in AppDomain.CurrentDomain.GetAssemblies().SelectMany(assembly => assembly.GetTypes()).Where(type => typeof(AbstractDevice).IsAssignableFrom(type) && !type.IsAbstract))
+            foreach (var type in AppDomain.CurrentDomain.GetAssemblies().SelectMany(assembly => assembly.GetTypes()).Where(type => typeof(IDevice).IsAssignableFrom(type) && !type.IsAbstract))
             {
-                var groupField = type.GetField("group", BindingFlags.Static | BindingFlags.NonPublic);
-                if (groupField != null && groupField.FieldType == typeof(string))
+                var attribute = (DeviceAttribute) Attribute.GetCustomAttribute(type, typeof(DeviceAttribute));
+                if (attribute != null)
                 {
-                    var idField = type.GetField("id", BindingFlags.Static | BindingFlags.NonPublic);
-                    if (idField != null && idField.FieldType == typeof(string))
+                    // This is probably not necessary
+                    if (type.GetConstructor(new Type[0]) != null)
                     {
-                        var constructor = type.GetConstructor(new Type[0]);
-                        if (constructor != null)
-                        {
-                            Debug.Print("FOUND DEVICE DEFINTION FOR: {0}:{1}", groupField.GetValue(null), idField.GetValue(null));
-                            // do something awesome
-                        }
+                        Debug.Print("FOUND '{0}' DEVICE DEFINTION FOR ID: '{1}'", attribute.type, attribute.id);
+                        deviceTypeAndIdToType.Add((attribute.type, attribute.id), type);
                     }
                 }
             }

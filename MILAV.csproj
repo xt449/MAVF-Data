@@ -50,7 +50,6 @@
     <Compile Include="Data\Rectangle.cs" />
     <Compile Include="Data\SerialParity.cs" />
     <Compile Include="Device\DeviceRegistry.cs" />
-    <Compile Include="API\Device\AbstractDevice.cs" />
     <Compile Include="JSON\IConnectionConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Extensions.cs" />
