@@ -1,5 +1,8 @@
 ﻿namespace MILAV.Data
 {
+    /// <summary>
+    /// Origin is always the top left corner
+    /// </summary>
     public readonly struct Rectangle
     {
         public readonly int x;
@@ -7,6 +10,9 @@
         public readonly int width;
         public readonly int height;
 
+        /// <summary>
+        /// Origin is always the top left corner
+        /// </summary>
         public Rectangle(int x, int y, int width, int height)
         {
             this.x = x;
