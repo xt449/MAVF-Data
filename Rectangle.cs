@@ -1,4 +1,6 @@
-﻿namespace MILAV.Data
+﻿using System.Drawing;
+
+namespace MILAV.Data
 {
     /// <summary>
     /// Origin is always the top left corner
@@ -21,8 +23,19 @@
             this.height = height;
         }
 
-        public Point2D TopLeftCorner { get { return new Point2D(x, y); } }
+        /// <summary>
+        /// Origin is always the top left corner
+        /// </summary>
+        public Rectangle(Point origin, Point bottomRight)
+        {
+            this.x = origin.X;
+            this.y = origin.Y;
+            this.width = bottomRight.X - this.x;
+            this.height = bottomRight.Y - this.y;
+        }
 
-        public Point2D BottomRightCorner { get { return new Point2D(x + width, y + height); } }
+        public Point TopLeftCorner { get { return new Point(x, y); } }
+
+        public Point BottomRightCorner { get { return new Point(x + width, y + height); } }
     }
 }
