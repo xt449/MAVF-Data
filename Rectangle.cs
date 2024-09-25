@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace MILAV.Data
+namespace MAVF.Data
 {
 	/// <summary>
 	/// Origin is always the top left corner
